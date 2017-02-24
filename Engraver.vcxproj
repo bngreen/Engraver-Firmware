@@ -1,0 +1,182 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|ARM">
+      <Configuration>Debug</Configuration>
+      <Platform>ARM</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|ARM">
+      <Configuration>Release</Configuration>
+      <Platform>ARM</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ApplicationType>EmbeddedDebugger</ApplicationType>
+    <ProjectGuid>{8bcc66cb-74d0-4bc3-b2f7-b58c0f15c53d}</ProjectGuid>
+    <Keyword>MakeFileProj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'" Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM'" Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <!--<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <NMakeOutput>Project2.exe</NMakeOutput>
+    <NMakePreprocessorDefinitions>WIN32;_DEBUG;$(NMakePreprocessorDefinitions)</NMakePreprocessorDefinitions>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <NMakeOutput>Project2.exe</NMakeOutput>
+    <NMakePreprocessorDefinitions>WIN32;NDEBUG;$(NMakePreprocessorDefinitions)</NMakePreprocessorDefinitions>
+  </PropertyGroup>-->
+  <PropertyGroup>
+    <UseDefaultDebuggersPropertyPageSchemas>false</UseDefaultDebuggersPropertyPageSchemas>
+    <UseDefaultPropertyPageSchemas>false</UseDefaultPropertyPageSchemas>
+    <_ApplicableDebuggers>Desktop</_ApplicableDebuggers>
+    <DebuggerFlavor>EmbeddedDebugger</DebuggerFlavor>
+  </PropertyGroup>
+  <ItemGroup>
+    <PropertyPageSchema Include="$(VCTargetsPath)$(LangID)\ProjectItemsSchema.xml" />
+    <PropertyPageSchema Include="$(VCTargetsPath)$(LangID)\directories.xml" />
+    <PropertyPageSchema Include="$(VCTargetsPath)$(LangID)\debugger_general.xml" />
+    <PropertyPageSchema Include="C:\GreenEmbedded\Assets\EmbeddedDebugger.xaml" />
+    <PropertyPageSchema Include="C:\GreenEmbedded\Assets\linux_nmake.xaml" />
+    <PropertyPageSchema Include="C:\GreenEmbedded\Assets\embedded.xaml" />
+    <!-- project only rules -->
+    <PropertyPageSchema Include="$(VCTargetsPath)$(LangID)\general_makefile.xml">
+      <Context>Project</Context>
+    </PropertyPageSchema>
+    <!-- Property sheet only rules -->
+    <PropertyPageSchema Include="$(VCTargetsPath)$(LangID)\general_makefile_ps.xml;$(VCTargetsPath)$(LangID)\usermacros.xml">
+      <Context>PropertySheet</Context>
+    </PropertyPageSchema>
+    <!-- File only rules -->
+    <PropertyPageSchema Include="$(VCTargetsPath)$(LangID)\general_file.xml">
+      <Context>File</Context>
+    </PropertyPageSchema>
+  </ItemGroup>
+  <ItemGroup>
+    <DesktopDebuggerPages Include="C:\GreenEmbedded\Assets\EmbeddedDebugger.xaml" />
+    <DesktopDebuggerPages Include="C:\GreenEmbedded\Assets\linux_nmake.xaml" />
+    <DesktopDebuggerPages Include="C:\GreenEmbedded\Assets\embedded.xaml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectCapability Include="Embedded" />
+  </ItemGroup>
+  <ItemDefinitionGroup>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="Drivers\CMSIS\Device\ST\STM32F1xx\Source\Templates\system_stm32f1xx.c" />
+    <ClCompile Include="Drivers\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_crc.c" />
+    <ClCompile Include="Src\Commands.cpp" />
+    <ClCompile Include="Src\Engraver.cpp" />
+    <ClCompile Include="Src\StaticSettings.cpp" />
+    <ClCompile Include="Src\usbd_conf.c" />
+    <ClCompile Include="Drivers\STM32F1xx_HAL_Driver\Src\stm32f1xx_ll_usb.c" />
+    <ClCompile Include="Drivers\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_gpio.c" />
+    <ClCompile Include="Src\stm32f1xx_it.c" />
+    <ClCompile Include="Drivers\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_flash.c" />
+    <ClCompile Include="Drivers\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_dma.c" />
+    <ClCompile Include="Middlewares\ST\STM32_USB_Device_Library\Core\Src\usbd_ioreq.c" />
+    <ClCompile Include="Drivers\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_spi.c" />
+    <ClCompile Include="Src\crc.c" />
+    <ClCompile Include="Drivers\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_cortex.c" />
+    <ClCompile Include="Drivers\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_rcc.c" />
+    <ClCompile Include="Drivers\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_tim.c" />
+    <ClCompile Include="Src\stm32f1xx_hal_msp.c" />
+    <ClCompile Include="Drivers\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_pwr.c" />
+    <ClCompile Include="Src\usbd_cdc_if.c" />
+    <ClCompile Include="Src\gpio.c" />
+    <ClCompile Include="Drivers\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal.c" />
+    <ClCompile Include="Src\usb_device.c" />
+    <ClCompile Include="Drivers\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_pcd_ex.c" />
+    <ClCompile Include="Drivers\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_spi_ex.c" />
+    <ClCompile Include="Drivers\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_flash_ex.c" />
+    <ClCompile Include="Drivers\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_pcd.c" />
+    <ClCompile Include="Drivers\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_rcc_ex.c" />
+    <ClCompile Include="Src\usbd_desc.c" />
+    <ClCompile Include="Drivers\CMSIS\Device\ST\STM32F1xx\Source\Templates\gcc\startup_stm32f103xb.s" />
+    <ClCompile Include="Middlewares\ST\STM32_USB_Device_Library\Class\CDC\Src\usbd_cdc.c" />
+    <ClCompile Include="Src\spi.c" />
+    <ClCompile Include="Src\main.c" />
+    <ClCompile Include="Middlewares\ST\STM32_USB_Device_Library\Core\Src\usbd_ctlreq.c" />
+    <ClCompile Include="Drivers\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_tim_ex.c" />
+    <ClCompile Include="Src\tim.c" />
+    <ClCompile Include="Middlewares\ST\STM32_USB_Device_Library\Core\Src\usbd_core.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Inc\Bresenham.hpp" />
+    <ClInclude Include="Inc\Commands.h" />
+    <ClInclude Include="Inc\Configuration.h" />
+    <ClInclude Include="Inc\Engraver.h" />
+    <ClInclude Include="Inc\Motion.hpp" />
+    <ClInclude Include="Inc\Stepper.hpp" />
+    <ClInclude Include="Inc\Settings.h" />
+    <ClInclude Include="Inc\STM32DelayTimer.hpp" />
+    <ClInclude Include="Inc\STM32Pin.hpp" />
+    <ClInclude Include="Inc\STM32PWM.hpp" />
+    <ClInclude Include="Inc\Vector2.hpp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">
+    <NMakeBuildCommandLine>gvsmake build $(ProjectName) $(Configuration)</NMakeBuildCommandLine>
+    <NMakeReBuildCommandLine>gvsmake rebuild $(ProjectName) $(Configuration)</NMakeReBuildCommandLine>
+    <NMakeCleanCommandLine>gvsmake clean $(ProjectName) $(Configuration)</NMakeCleanCommandLine>
+    <IncludePath>$(VC_IncludePath);.;Inc;Drivers/STM32F1xx_HAL_Driver/Inc;Drivers/STM32F1xx_HAL_Driver/Inc/Legacy;Middlewares/ST/STM32_USB_Device_Library/Core/Inc;Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc;Drivers/CMSIS/Include;Drivers/CMSIS/Device/ST/STM32F1xx/Include</IncludePath>
+    <NMakePreprocessorDefinitions>__weak="__attribute__((weak))";__packed="__attribute__((__packed__))";USE_HAL_DRIVER;STM32F103xB</NMakePreprocessorDefinitions>
+    <NMakeForcedIncludes>intellisense.h</NMakeForcedIncludes>
+    <EMToolchainPrefix>arm-none-eabi-</EMToolchainPrefix>
+    <EMMCU>STM32F103C8Tx</EMMCU>
+    <EMInstructionSet>thumbII</EMInstructionSet>
+    <EMFPU>no</EMFPU>
+    <EMFloatABI>soft</EMFloatABI>
+    <EMCIncludePaths>Inc;Drivers/STM32F1xx_HAL_Driver/Inc;Drivers/STM32F1xx_HAL_Driver/Inc/Legacy;Middlewares/ST/STM32_USB_Device_Library/Core/Inc;Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc;Drivers/CMSIS/Include;Drivers/CMSIS/Device/ST/STM32F1xx/Include</EMCIncludePaths>
+    <EMCSymbols>__weak="__attribute__((weak))";__packed="__attribute__((__packed__))";USE_HAL_DRIVER;STM32F103xB</EMCSymbols>
+    <EMCOther>-fmessage-length=0</EMCOther>
+    <EMLLDFlags>
+    </EMLLDFlags>
+    <EMLScript>STM32F103C8Tx_FLASH.ld</EMLScript>
+    <EMCLibType>nano</EMCLibType>
+    <EMFloatSup>none</EMFloatSup>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">
+    <NMakeBuildCommandLine>gvsmake build $(ProjectName) $(Configuration)</NMakeBuildCommandLine>
+    <NMakeReBuildCommandLine>gvsmake rebuild $(ProjectName) $(Configuration)</NMakeReBuildCommandLine>
+    <NMakeCleanCommandLine>gvsmake clean $(ProjectName) $(Configuration)</NMakeCleanCommandLine>
+    <IncludePath>$(VC_IncludePath);.;Inc;Drivers/STM32F1xx_HAL_Driver/Inc;Drivers/STM32F1xx_HAL_Driver/Inc/Legacy;Middlewares/ST/STM32_USB_Device_Library/Core/Inc;Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc;Drivers/CMSIS/Include;Drivers/CMSIS/Device/ST/STM32F1xx/Include</IncludePath>
+    <NMakePreprocessorDefinitions>__weak="__attribute__((weak))";__packed="__attribute__((__packed__))";USE_HAL_DRIVER;STM32F103xB</NMakePreprocessorDefinitions>
+    <NMakeForcedIncludes>intellisense.h</NMakeForcedIncludes>
+    <EMToolchainPrefix>arm-none-eabi-</EMToolchainPrefix>
+    <EMMCU>STM32F103C8Tx</EMMCU>
+    <EMInstructionSet>thumbII</EMInstructionSet>
+    <EMFPU>no</EMFPU>
+    <EMFloatABI>soft</EMFloatABI>
+    <EMCIncludePaths>Inc;Drivers/STM32F1xx_HAL_Driver/Inc;Drivers/STM32F1xx_HAL_Driver/Inc/Legacy;Middlewares/ST/STM32_USB_Device_Library/Core/Inc;Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc;Drivers/CMSIS/Include;Drivers/CMSIS/Device/ST/STM32F1xx/Include</EMCIncludePaths>
+    <EMCSymbols>__weak="__attribute__((weak))";__packed="__attribute__((__packed__))";USE_HAL_DRIVER;STM32F103xB</EMCSymbols>
+    <EMCOther>-fmessage-length=0</EMCOther>
+    <EMLLDFlags>
+    </EMLLDFlags>
+    <EMLScript>SW4STM32\Engraver\STM32F103C8Tx_FLASH.ld</EMLScript>
+    <EMCLibType>nano</EMCLibType>
+    <EMFloatSup>none</EMFloatSup>
+  </PropertyGroup>
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

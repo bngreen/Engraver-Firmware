@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25123.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Engraver", "Engraver.vcxproj", "{8BCC66CB-74D0-4BC3-B2F7-B58C0F15C53D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|ARM = Debug|ARM
+		Release|ARM = Release|ARM
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8BCC66CB-74D0-4BC3-B2F7-B58C0F15C53D}.Debug|ARM.ActiveCfg = Debug|ARM
+		{8BCC66CB-74D0-4BC3-B2F7-B58C0F15C53D}.Debug|ARM.Build.0 = Debug|ARM
+		{8BCC66CB-74D0-4BC3-B2F7-B58C0F15C53D}.Release|ARM.ActiveCfg = Release|ARM
+		{8BCC66CB-74D0-4BC3-B2F7-B58C0F15C53D}.Release|ARM.Build.0 = Release|ARM
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

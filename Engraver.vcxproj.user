@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ShowAllFiles>false</ShowAllFiles>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">
+    <EDGDBDebugger>arm-none-eabi-gdb</EDGDBDebugger>
+    <EDAppBinary>build\\$(ProjectName).elf</EDAppBinary>
+    <EDLoadApplication>true</EDLoadApplication>
+    <EDOpenOCDScript>/board/stm32f1.cfg</EDOpenOCDScript>
+    <EDOpenOCDPath>C:\openocd\bin\openocd</EDOpenOCDPath>
+    <EDSemihosting>false</EDSemihosting>
+    <EDDebuggerFlavor>EmbeddedDebugger</EDDebuggerFlavor>
+    <EDWorkingDirectory>$(ProjectDir)</EDWorkingDirectory>
+    <DebuggerFlavor>EmbeddedDebugger</DebuggerFlavor>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">
+    <EDGDBDebugger>arm-none-eabi-gdb.exe</EDGDBDebugger>
+    <EDAppBinary>build\\$(ProjectName).elf</EDAppBinary>
+    <EDLoadApplication>true</EDLoadApplication>
+    <EDOpenOCDScript>/board/stm32f1.cfg</EDOpenOCDScript>
+    <EDOpenOCDPath>C:\openocd\bin\openocd</EDOpenOCDPath>
+    <EDSemihosting>false</EDSemihosting>
+    <EDDebuggerFlavor>EmbeddedDebugger</EDDebuggerFlavor>
+    <EDWorkingDirectory>$(ProjectDir)</EDWorkingDirectory>
+    <DebuggerFlavor>EmbeddedDebugger</DebuggerFlavor>
+  </PropertyGroup>
+</Project>
